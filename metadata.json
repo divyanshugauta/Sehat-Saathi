@@ -1,0 +1,10 @@
+{
+  "name": "Sehat Saathi",
+  "description": "Art-directed, category-themed personal health companion unifying Today overview, Water & Hydration, Brain Fog, Cardiovascular, Dental Care, Nutrition, and AI Health Care.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

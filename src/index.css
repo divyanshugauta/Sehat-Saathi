@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    --ivory-canvas: #FAF6EF;
+    --ivory-surface: #FFFDF9;
+    --ivory-border: #E8DFD1;
+    --accent-orange: #E05A2B;
+    --accent-peach: #FCE7D8;
+    --accent-lavender: #6D5CAE;
+    --water-aqua: #0EA5E9;
+    --water-deep: #0369A1;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, .font-display-serif {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes wave-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-88px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.animate-wave-slow {
+  animation: wave-slide 7s linear infinite;
+}
+
+.animate-wave-reverse {
+  animation: wave-slide 10s linear infinite reverse;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-bubble-1 {
+  animation: bubble-rise 4.2s ease-in infinite;
+}
+
+.animate-bubble-2 {
+  animation: bubble-rise 5.4s ease-in 1.4s infinite;
+}
+
+.animate-bubble-3 {
+  animation: bubble-rise 4.8s ease-in 2.6s infinite;
+}
+
+.hero-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-slow,
+  .animate-wave-reverse,
+  .animate-float-gentle,
+  .animate-bubble-1,
+  .animate-bubble-2,
+  .animate-bubble-3 {
+    animation: none !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
